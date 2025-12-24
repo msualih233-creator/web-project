@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Property Finder</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.header {
+    background: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e5e5e5;
+}
+.header p {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #b40000;
+    padding: 3px 8px;
+}
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.nav-links ul li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    height: 100%;
+}
+aside {
+    background: #11324d;
+    color: white;
+    padding: 25px;
+    height: 100%;
+    margin-right:5px;
+    margin-bottom: 10px;
+}
+.dropdown input {
+    display: none; 
+}
+aside label {
+    display: block;
+    background: #1d4d6d;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.dropdown input:checked ~ .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: #d1d1d1;
+    text-decoration: none;
+    padding: 6px 0;
+    display: block;
+}
+.dropdown-content a:hover {
+    color:green;
+}
+.dropdown-content a:active{
+  color:white;
+}
+.image {
+    background: url("20230628_172155.jpg") center/cover no-repeat;
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.image p {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px black;
+}
+.search {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.search input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+}
+.select {
+    width: 90%;
+    margin: auto;
+    background: #004466;
+    padding: 4rem;
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: white;
+}
+.select select {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+.done-btn a {
+    background: #0d5c88;
+    padding: 20px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.feature{
+  padding: 20px;
+  margin-left: 15rem;
+  background-color: gray;
+  width: 18vw;
+  height: 15rem;
+}
+footer {
+    background: #002b43;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+/*properties list*/
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p>Property</p>
+    <div class="nav-links">
+      <ul>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="rental.html">Rental</a></li>
+        <li><a href="signup.php">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="layout">
+<aside class="aside">
+  <div class="dropdown">
+    <input type="checkbox" id="dashboard-toggle">
+    <label for="dashboard-toggle">Dashboard ▼</label>
+    <div class="dropdown-content">
+      <a href="Properties.html">Properties</a>
+      <a href="Rooms.html">Rooms</a>
+      <a href="sell.html">Sell</a>
+      <a href="buy.html">Buy</a>
+      <a href="report.html">Reports</a>
+      <a href="Help.html">Help</a>
+      <a href="list.html">list of Seller</a>
+    </div>
+  </div>
+</aside>
+    <main>
+      <div class="image">
+        <p>Find Property</p>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search city">
+      </div>
+      <div class="select">
+        <select>
+          <option value="">Property Type</option>
+          <option value="house">House</option>
+          <option value="apartment">Apartment</option>
+          <option value="shop">Shop</option>
+        </select>
+        <select>
+          <option value="">Min Price</option>
+          <option value="100000">R100 000</option>
+          <option value="200000">R200 000</option>
+          <option value="300000">R300 000</option>
+        </select>
+        <select>
+          <option value="">Max Price</option>
+          <option value="200000">R200 000</option>
+          <option value="450000">R450 000</option>
+          <option value="800000">R800 000</option>
+        </select>
+        <div class="done-btn">
+          <a href="search.html">Search</a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer>
+    &copy; Developed by Group-7 — 2018
+  </footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: #f4f6f8;
+    }
+    .apartment{
+        width: 46vw;
+        height: 85vh;
+        background-color:aliceblue;
+        border-radius: 12px;
+        margin-left: 20%;
+        margin-top: 3%;
+    }
+    .apartment .img{
+        width: 50vw;
+        height: 85vh;
+    }
+    /*dropdown style start */
+    
+aside {
+    background: #11324d;
+    color: white;
+    padding: 25px;
+    height:auto;
+    margin-right:5px;
+    width: 8%;
+    margin-top: -2504px;
+    
+}
+.dropdown input {
+    display: none; 
+}
+aside label {
+    display: block;
+    background: #1d4d6d;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 7vw;
+}
+.dropdown-content {
+    display: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.dropdown input:checked ~ .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: #d1d1d1;
+    text-decoration: none;
+    padding: 6px 0;
+    display: block;
+}
+.dropdown-content a:hover {
+    color:green;
+}
+.dropdown-content a:active{
+  color:white;
+}
+.layout{
+ background-color: #11324d;
+    height: 358vh;
+    width: 11%;
+    border-radius: 20px 20px 20px 20px;
+}
+.main-content h2{
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 900;
+    background-color: url("20230628_172155.jpg") center/cover no-repeat;
+}
+/*header style*/
+.header {
+    background: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e5e5e5;
+}
+.header p {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #b40000;
+    padding: 3px 8px;
+}
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.nav-links ul li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+footer {
+    background: #002b43;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+</style>
+<body>
+    <div class="header">
+    <p>Property</p>
+    <div class="nav-links">
+      <ul>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="rental.html">Rental</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+    <div class="apartment">
+    <img src="Screenshot 2025-12-13 224837.png" alt="image here"><br>
+        <a href="show_detail_to_buy.html">Show detail to buy</a>
+        <h1>R 10000 per month</h1>
+        <p>3 Bedroom Apartment in Addis Ababa</p>
+        <p>🛏3 🚿2 🚗1</p>
+    </div>
+      </div>
+    <div class="apartment">
+    <img src="Screenshot 2025-12-13 224837.png" alt="image here"><br>
+        <a href="show_detail_to_buy.html">Show detail to buy</a>
+        <h1>R 10000 per month</h1>
+        <p>3 Bedroom Apartment in Addis Ababa</p>
+        <p>🛏3 🚿2 🚗1</p>
+    </div>
+      </div>
+    <div class="apartment">
+    <img src="Screenshot 2025-12-13 224837.png" alt="image here"><br>
+        <a href="show_detail_to_buy.html">Show detail to buy</a>
+        <h1>R 10000 per month</h1>
+        <p>3 Bedroom Apartment in Addis Ababa</p>
+        <p>🛏3 🚿2 🚗1</p>
+    </div>
+      </div>
+    <div class="apartment">
+    <img src="Screenshot 2025-12-13 224837.png" alt="image here"><br>
+        <a href="show_detail_to_buy.html">Show detail to buy</a>
+        <h1>R 10000 per month</h1>
+        <p>3 Bedroom Apartment in Addis Ababa</p>
+        <p>🛏3 🚿2 🚗1</p>
+    </div>
+    <footer>
+    &copy; Developed by Group-7 — 2018
+  </footer>
+     <div class="layout">
+<aside class="aside">
+  <div class="dropdown">
+    <input type="checkbox" id="dashboard-toggle">
+    <label for="dashboard-toggle">Dashboard ▼</label>
+    <div class="dropdown-content">
+      <a href="Properties.html">Properties</a>
+      <a href="Rooms.html">Rooms</a>
+      <a href="sell.html">Sell</a>
+      <a href="buy.html">Buy</a>
+      <a href="report.html">Reports</a>
+      <a href="Help.html">Help</a>
+      <a href="list.html">list of Seller</a>
+    </div>
+  </div>
+</aside>
+</body>
+</html>

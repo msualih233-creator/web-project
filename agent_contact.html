@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Agent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+section{
+    margin-left: 300%;
+    margin-top: -240%;
+}
+
+.contact-card {
+    width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+.contact-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-outline {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #3cc49f;
+    background: transparent;
+    color: #3cc49f;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-outline.whatsapp {
+    color: #25d366;
+    border-color: #25d366;
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+.field label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+}
+
+.field textarea {
+    resize: none;
+    height: 80px;
+}
+
+.btn-send {
+    width: 100%;
+    padding: 14px;
+    background: #3cc49f;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.terms {
+    font-size: 11px;
+    color: #777;
+    text-align: center;
+    margin-top: 12px;
+}
+/*aside /dropdown*/
+aside {
+    background: #11324d;
+    color: white;
+    padding: 70px;
+    height: 100%;
+    margin-right:5px;
+    margin-bottom: 10px;
+}
+.dropdown input {
+    display: none; 
+}
+aside label {
+    display: block;
+    background: #1d4d6d;
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.dropdown input:checked ~ .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: #d1d1d1;
+    text-decoration: none;
+    padding: 6px;
+    display: block;
+}
+.dropdown-content a:hover {
+    color:green;
+}
+.dropdown-content a:active{
+  color:white;
+}
+.layout{
+ background-color: #11324d;
+    height: 90vh;
+    width: 20%;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: -100%;
+}
+.back{
+    padding: 2px;
+     background-color: rgb(220, 205, 255);
+     height: 2vh;
+}
+.back a{
+    float: left;
+    text-decoration: none;
+}
+</style>
+<body>
+    <div class="back">
+        <a href="form.html">Back</a>
+    </div>
+    <div class="layout">
+<aside class="aside">
+  <div class="dropdown">
+    <input type="checkbox" id="dashboard-toggle">
+    <label for="dashboard-toggle">Dashboard ▼</label>
+    <div class="dropdown-content">
+      <a href="Properties.html">Properties</a>
+      <a href="Rooms.html">Rooms</a>
+      <a href="sell.html">Sell</a>
+      <a href="buy.html">Buy</a>
+      <a href="report.html">Reports</a>
+      <a href="Help.html">Help</a>
+      <a href="list.html">list of Seller</a>
+    </div>
+  </div>
+</aside>
+<section>
+<div class="contact-card">
+    <h2>Contact Agent</h2>
+
+    <button class="btn-outline">📞 Show Contact Number</button>
+    <button class="btn-outline whatsapp">💬 WhatsApp Agent</button>
+
+    <div class="field">
+        <label>👤 Your Name</label>
+        <input type="text">
+    </div>
+
+    <div class="field">
+        <label>✉️ Your Email</label>
+        <input type="email">
+    </div>
+
+    <div class="field">
+        <label>📞 Your Mobile Number</label>
+        <input type="text">
+    </div>
+
+    <div class="field">
+        <label>💬 Message</label>
+        <textarea>I'm interested in this property, please contact me.</textarea>
+    </div>
+
+    <button class="btn-send">Send Message</button>
+</div>
+</section>
+</body>
+</html>

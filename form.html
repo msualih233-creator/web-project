@@ -1,0 +1,228 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: auto;
+        height: auto;
+        background: #f4f6f8;
+        justify-content: center;
+    }
+    /*form style tart*/
+   .form{
+    background-color: #11324d;
+    padding: 45px;
+    margin-right: -180px;
+    height: 20vh;
+    border-radius: 12px;
+   }
+     .form a{
+    float: left;
+       color: white;
+       cursor: pointer;
+       font-size: 1.5rem;
+       font-weight: 700;
+       margin-right: 2%;
+       margin-top: -2.5%;
+       background-color:aqua ;
+       padding: 10px;
+       border-radius: 12px;
+       text-decoration: none;
+     }
+     .form a:hover{
+     background-color:blue; 
+ }
+ .form h1{
+    text-align: center;
+    color: white;
+ } 
+ .form form a{
+    float: right;
+ }
+ /*form style end*/
+ /*dropdown style start*/
+ aside {
+    background: #11324d;
+    color: white;
+    padding: 25px;
+    height:auto;
+    margin-right:5px;
+    width: 8%;
+    margin-top: -715px;
+    
+}
+.dropdown input {
+    display: none; 
+}
+aside label {
+    display: block;
+    background: #1d4d6d;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 7vw;
+}
+.dropdown-content {
+    display: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.dropdown input:checked ~ .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: #d1d1d1;
+    text-decoration: none;
+    padding: 6px 0;
+    display: block;
+}
+.dropdown-content a:hover {
+    color:green;
+}
+.dropdown-content a:active{
+  color:white;
+}
+.layout{
+ background-color: #11324d;
+    height: 170vh;
+    width: 11%;
+    border-radius: 20px 20px 20px 20px;
+}
+.main-content h2{
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 900;
+    background-color: url("20230628_172155.jpg") center/cover no-repeat;
+}
+/*drop down end*/
+footer {
+    background: #002b43;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-weight: bold;
+    margin-top: 1000px;
+    width:100vw;
+}
+/*propertiy_listing start*/
+.propertiy_form{
+    width: 50vw;
+    height: 100vh;
+    background-color: #ffffff;
+    margin-left: 14%;
+}
+.propertiy_form h2{
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 900;
+}
+.propertiy_form p{
+    text-align: center;
+    font-size: 1.0rem;
+    font-weight: 900;
+}
+section{
+    width: 100vw;
+    height: 90vh;
+    margin-left: 12%;
+    margin-top: 100px;
+    background-color: #f4f6f8;
+}
+/*form style start */
+.propertiy_form{
+    width: 360px;
+    background-color: #ffffff;
+    padding: 100px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgb(0, 0,0,0.08);
+}
+.propertiy_form label{
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color:#444 ;
+}
+.propertiy_form input,.propertiy_form textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-bottom: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+.bet{
+    width: 100%;
+    padding: 25px;
+    background: #2fb98f;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.bet:hover{
+    background-color: #26a97f;
+}
+.propertiy_form .dicription input{
+    padding: 24px;
+}
+</style>
+<body>
+   <div class="form">
+    <h1><b>Add New Propertiy</b></h1>
+    <a href="properties.html">Back</a>
+    <form>
+    <a href="agent_contact.html">Agent contact</a>
+    </form>
+   </div>
+   <section>
+    <form action="form.php" method="post" class="propertiy_form">
+    <h2>Add propertiy Listing</h2>
+    <p>Fill in the details to publish this real state/rental property </p>
+    <label for="Owner Name">Name</label>
+    <input type="text">
+    <label for="Phone Name">Phone</label>
+    <input type="tel">
+    <label for="Apartment">Apartment Name</label>
+    <input type="text">
+    <label for="Location">Location</label>
+    <input type="text">
+    <label for="Monthly Rent">Monthly Rent</label>
+    <input type="text">
+    <label for="BedRoom">Bedroom</label>
+    <input type="text">
+    <label for="Discription" class="dicription">Discription</label>
+    <input type="text">
+    <button type="submit" class="bet">Submit to Broker</button>
+    </form>
+   </section>
+   <div class="layout">
+<aside class="aside">
+  <div class="dropdown">
+    <input type="checkbox" id="dashboard-toggle">
+    <label for="dashboard-toggle">Dashboard ▼</label>
+    <div class="dropdown-content">
+      <a href="Properties.html">Properties</a>
+      <a href="Rooms.html">Rooms</a>
+      <a href="sell.html">Sell</a>
+      <a href="buy.html">Buy</a>
+      <a href="report.html">Reports</a>
+      <a href="Help.html">Help</a>
+      <a href="list.html">list of Seller</a>
+    </div>
+  </div>
+</aside> 
+<footer>
+    &copy; Developed by Group-7 — 2018
+  </footer>
+</body>
+</html> -->
