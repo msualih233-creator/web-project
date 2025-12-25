@@ -1,25 +1,17 @@
 <?php
-<?php
 session_start();
 
 
-$conn = mysqli_connect("localhost","root","","rental_system");
+if (isset($_SESSION['user_id'])) {
+    header("Location: dashboard.php");
+}
 
 
-$user_email = $_SESSION['email']; 
-$sql = "DELETE FROM users WHERE email='$user_email'";
-mysqli_query($conn, $sql);
-mysqli_close($conn);
-
-
-session_unset();
-session_destroy();
-
-
-header("Location: signup.php");
-exit();
-?>
-
+$db_name = "rental_system"; 
+$conn = mysqli_connect("localhost", "root", "", $db_name);
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 
 
 $usersTable = "
