@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@
 
 body {
     background: linear-gradient(to right, #6a11cb, #2575fc);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,21 +83,26 @@ body {
     background: #6a11cb;
 }
 
-small {
+small.error {
     font-size: 12px;
+    color: red;
+}
+
+.success-message {
+    color: green;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .contact-card p {
     text-align: center;
     margin-top: 10px;
-    font-size: 14px;
 }
 
 .contact-card p a {
     color: #2575fc;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
 }
 
 .contact-card p a:hover {
