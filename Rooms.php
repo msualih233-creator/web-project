@@ -1,4 +1,8 @@
-<!-- <!DOCTYPE html>
+<?php
+
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -141,4 +145,4 @@ aside label {
   </div>
 </aside>
 </body>
-</html> -->
+</html>

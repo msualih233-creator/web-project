@@ -1,1 +1,129 @@
-* { box-sizing: border-box; font-family: Arial, sans-serif; } body { background: #f4f6f8; display: flex; justify-content: center; padding: 40px; } /* CARD */ .contact-card { width: 360px; background: #ffffff; padding: 25px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); } /* TITLE */ .contact-card h2 { text-align: center; margin-bottom: 25px; color: #333; } /* LABEL */ .contact-card label { display: block; margin-bottom: 6px; font-size: 14px; color: #444; } /* INPUTS */ .contact-card input, .contact-card textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; font-size: 14px; margin-bottom: 16px; outline: none; transition: 0.3s; } /* INPUT FOCUS */ .contact-card input:focus, .contact-card textarea:focus { border-color: #2fb98f; } /* TEXTAREA */ .contact-card textarea { height: 90px; resize: none; } /* BUTTON */ .btn-send { width: 100%; padding: 14px; background: #2fb98f; border: none; color: white; font-size: 15px; border-radius: 10px; cursor: pointer; transition: 0.3s; } .btn-send:hover { background: #26a97f; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Common Card (Login & Register) */
+.contact-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 400px;
+    max-width: 95%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.contact-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Labels */
+.contact-card label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Inputs */
+.contact-card input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card input:focus {
+    border: 1px solid #2575fc;
+    box-shadow: 0 0 5px rgba(37,117,252,0.5);
+}
+
+/* Button */
+.btn-send {
+    width: 100%;
+    background: #2575fc;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-send:hover {
+    background: #6a11cb;
+}
+
+/* Validation Errors (Register) */
+small.error {
+    display: block;
+    font-size: 12px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Error box (Login errors) */
+.error {
+    background: #ffe5e5;
+    color: red;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Success Message */
+.success-message {
+    background: #e6fffa;
+    color: green;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Bottom text */
+.contact-card p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.contact-card p a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-card p a:hover {
+    color: #6a11cb;
+}

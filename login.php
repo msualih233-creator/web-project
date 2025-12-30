@@ -1,85 +1,103 @@
 <?php
 session_start();
 
-
-if (isset($_SESSION['user_id'])) {
-    header("Location: dashboard.php"); 
-    exit();
-}
-
-
-$db_name = "rental_system"; ame
-$conn = mysqli_connect("localhost", "root", "", $db_name);
+$conn = mysqli_connect("localhost", "root", "", "rental_system");
 if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-$email = $password = "";
-$email_error = $password_error = $login_error = "";
-
+$error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
+    $role = $_POST['role'] ?? "";
 
-    if (empty($email)) $email_error = "Email is required";
-    if (empty($password)) $password_error = "Password is required";
+    if (empty($email) || empty($password) || empty($role)) {
+        $error = "All fields are required";
+    } else {
 
-    if ($email_error == "" && $password_error == "") {
-        
         $result = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
-        if (mysqli_num_rows($result) > 0) {
+
+        if (mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
-            if (password_verify($password, $user['password'])) {
-            
+
+            if (!password_verify($password, $user['password'])) {
+                $error = "Incorrect password";
+            } elseif ($role !== $user['role']) {
+                $error = "Role not matched. You are not authorized as $role.";
+            } else {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user['role'];
 
-                
                 if ($user['role'] == 'admin') {
                     header("Location: admin_dashboard.php");
                 } else {
                     header("Location: dashboard.php");
                 }
                 exit();
-            } else {
-                $login_error = "Incorrect password";
             }
         } else {
-            $login_error = "Email not registered";
+            $error = "Account not found. Please register.";
         }
     }
 }
-
-mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login - Rental System</title>
-    <link rel="stylesheet" href="sign_up_style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form method="POST" class="contact-card">
-    <h2>🔑 Login</h2>
 
-    <?php if ($login_error != "") { ?>
-        <div class="error"><?php echo $login_error; ?></div>
+<form method="POST" class="contact-card" id="loginForm">
+    <h2>🔐 Login</h2>
+
+    <?php if ($error != "") { ?>
+        <div class="error"><?php echo $error; ?></div>
     <?php } ?>
 
     <label>📧 Email</label>
-    <input type="email" name="email" value="<?php echo $email; ?>">
-    <small class="error"><?php echo $email_error; ?></small>
+    <input type="email" name="email" required>
 
     <label>🔒 Password</label>
-    <input type="password" name="password">
-    <small class="error"><?php echo $password_error; ?></small>
+    <input type="password" name="password" required>
 
-    <button class="btn-send">Login</button>
-    <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+    <!-- Hidden role input -->
+    <input type="hidden" name="role" id="roleInput">
+
+    <button type="button" class="btn-send" onclick="showRoleChoice()">Login</button>
+
+    <p>Don’t have an account? <a href="signup.php">Register</a></p>
 </form>
+
+<!-- ROLE POPUP -->
+<div id="rolePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+
+    <div style="background:#fff; padding:30px; border-radius:10px; text-align:center; width:300px;">
+        <h3>Login as</h3>
+        <br>
+        <button class="btn-send" onclick="selectRole('user')">User</button>
+        <br><br>
+        <button class="btn-send" onclick="selectRole('admin')">Admin</button>
+    </div>
+</div>
+
+<script>
+function showRoleChoice() {
+    document.getElementById("rolePopup").style.display = "flex";
+}
+
+function selectRole(role) {
+    document.getElementById("roleInput").value = role;
+    document.getElementById("loginForm").submit();
+}
+</script>
+
 </body>
 </html>
